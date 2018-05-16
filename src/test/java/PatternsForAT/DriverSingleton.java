@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.sql.DriverManager;
 
 //Based on Thread Safe Singleton - https://www.journaldev.com/1377/java-singleton-design-pattern-best-practices-examples
+// Singlton driver create if needed store
 public class DriverSingleton
 {
     // static DriverSingleton instance = null;
@@ -20,8 +21,6 @@ public class DriverSingleton
 
     public static synchronized WebDriver getDriver()
     {
-
-
         return driver;
     }
 
