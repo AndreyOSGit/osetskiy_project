@@ -17,6 +17,11 @@ public class MailPage extends BasePage
     @FindBy(css = ".current.new a")
     protected WebElement inboxButton;
 
+    public void clickCreateMail() {
+
+        createMail.click();
+    }
+
     @FindBy(css = ".make_message a")
     protected WebElement createMail;
 

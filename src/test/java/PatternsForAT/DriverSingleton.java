@@ -14,7 +14,7 @@ public class DriverSingleton
 //    private static WrappedWebdriver wrappedWebdriver;
     public DriverSingleton()
     {
-        System.setProperty("webdriver.chrome.driver", "src\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\drivers\\chromedriver.exe");
         WebDriver teporaryDriver = new ChromeDriver();
         driver = new WrappedWebdriver(teporaryDriver) ;
     }

@@ -71,6 +71,7 @@ public class WrappedWebdriver implements WebDriver {
 
     public void close() {
     singltonDriver.close();
+    singltonDriver.quit();
     }
 
     public void quit() {

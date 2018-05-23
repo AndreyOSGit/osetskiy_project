@@ -37,12 +37,12 @@ public class DriverFactory
 
         WebDriver driver = null;
         if (browserName.equals("firefox") || browserName.equals("Firefox") || browserName.equals("FF"))
-        {  System.setProperty("webdriver.gecko.driver", "src\\drivers\\geckodriver.exe");
+        {  System.setProperty("webdriver.gecko.driver", "src\\resources\\drivers\\geckodriver.exe");
             drivers.put("FF", new FirefoxDriver());
             driver = drivers.get("FF");
         }
         else if (browserName.equals("googlechrome") || browserName.equals("GoogleChrome") || browserName.equals("GCh"))
-        { System.setProperty("webdriver.chrome.driver", "src\\drivers\\chromedriver.exe");
+        { System.setProperty("webdriver.chrome.driver", "src\\resources\\drivers\\chromedriver.exe");
             drivers.put("GCh",new ChromeDriver());
             driver = drivers.get("GCh");
         }
