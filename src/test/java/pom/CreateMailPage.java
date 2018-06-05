@@ -15,7 +15,7 @@ public class CreateMailPage extends BasePage
     @FindBy(css = "input[name=\"subject\"]")
     protected WebElement inputSubject;
 
-    @FindBy(css = ".text_editor_browser")
+    @FindBy(css = " html body div.body_container div.Body div.Cols_80_20.message_container div.Left div.text_editor_browser textarea#text ")
     protected WebElement inputText;
 
     @FindBy(css = "input[name=\"send\"]")

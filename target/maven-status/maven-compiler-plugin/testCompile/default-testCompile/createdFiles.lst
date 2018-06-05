@@ -1,0 +1,11 @@
+pom\MainPage.class
+PatternsForAT\WrappedWebdriver.class
+pom\BasePage.class
+enums\EnvironmentType.class
+pom\MailPage.class
+IUAsteps.class
+PatternsForAT\DriverFactory.class
+pom\CreateMailPage.class
+enums\DriverType.class
+Runner.class
+PatternsForAT\DriverSingleton.class
