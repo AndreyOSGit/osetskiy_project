@@ -1,5 +1,6 @@
 package pom;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,11 +16,13 @@ public class CreateMailPage extends BasePage
     @FindBy(css = "input[name=\"subject\"]")
     protected WebElement inputSubject;
 
-    @FindBy(css = " html body div.body_container div.Body div.Cols_80_20.message_container div.Left div.text_editor_browser textarea#text ")
+    @FindBy(css = "body.Smile")
     protected WebElement inputText;
 
     @FindBy(css = "input[name=\"send\"]")
     protected WebElement buttonSend;
+
+
 
 //    @FindBy(css = "")
 //    protected WebElement buttonUndo;
@@ -30,14 +33,14 @@ public class CreateMailPage extends BasePage
     public void writeImail(String Adres, String Subject, String Text)
     {
         inputAdres.sendKeys(Adres);
-        inputSubject.sendKeys(Subject);
+        inputSubject.sendKeys(Subject+ Keys.ENTER);
 //        inputText.click();
-        inputText.sendKeys(Text);
+//        inputText.sendKeys(Text);
     }
 
-    public  void sendEmail()
-    {
+    public  void sendEmail() throws InterruptedException {
         buttonSend.click();
+        Thread.sleep(2000);
     }
 
     public CreateMailPage()

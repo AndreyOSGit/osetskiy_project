@@ -86,7 +86,6 @@ public class IUAsteps {
     public void sentCreatedEmail() throws Throwable {
         CreateMailPage mail = PageFactory.initElements(runDriver, CreateMailPage.class);
         mail.sendEmail();
-        throw new PendingException();
     }
 
     @And("^I enter adress as (.*), subject as (.*), mail text as (.*)$")
@@ -94,4 +93,25 @@ public class IUAsteps {
         CreateMailPage mail = PageFactory.initElements(runDriver, CreateMailPage.class);
         mail.writeImail(Adress,Subject,Text);
     }
+
+    @And("^I Open mail list$")
+    public void iOpenMailList() throws Throwable {
+        MailPage mail = PageFactory.initElements(runDriver, MailPage.class);
+        mail.showMeInbox();
+    }
+
+
+    @And("^Open last mail I haven`t read from (.*)$")
+    public void openLastMailIHavenTReadFromTestmailswatIUa(String name) throws Throwable {
+        MailPage mail = PageFactory.initElements(runDriver, MailPage.class);
+        mail.openLastMailFrom(name);
+    }
+
+    @Then("^I see mail with subject as (.*) and text as (.*)$")
+    public void iSeeMailWithSubjectAsAndTextAs(String  String ) throws Throwable {
+//        eMailPa mail = PageFactory.initElements(runDriver, MailPage.class);
+
+    }
+
+
 }

@@ -6,3 +6,7 @@
      And I open create mail window
      And I enter adress as testmailswat@i.ua , subject as TestMail, mail text as Text
      Then Sent created email
+     And I Open mail list
+     And Open last mail I haven`t read from Tester11
+     Then I see mail with subject as TestMail and text as Text
+     

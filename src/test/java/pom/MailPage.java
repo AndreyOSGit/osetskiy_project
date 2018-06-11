@@ -9,12 +9,15 @@ import java.util.List;
 public class MailPage extends BasePage
 {
     @FindBy(css = "form[name = \"aform\"] .frm")
-    protected List<WebElement> mailsList;
+    protected List<WebElement> mailsListFrom;
 
     @FindBy(css = "form[name = \"aform\"] .attr input")
-    protected List<WebElement> mailsListCheckBox;
+    protected List<WebElement> mailListCheckBox;
 
-    @FindBy(css = ".current.new a")
+    @FindBy(css = "div.Right i.m")
+    protected List<WebElement> mailListReadCheck;
+
+    @FindBy(css = "li.current a")
     protected WebElement inboxButton;
 
     public void clickCreateMail() {
@@ -28,13 +31,31 @@ public class MailPage extends BasePage
     @FindBy(css = ".sn_menu_title")
     protected WebElement accountName;
 
-    protected void showMeInbox()
+    public void showMeInbox()
     {
         inboxButton.click();
     }
-    protected void goToCreateMail()
+    public void goToCreateMail()
     {
         createMail.click();
+    }
+
+    public void openLastMailFrom(String name)
+    {
+        for(WebElement mailsListFrom : mailsListFrom)
+        {
+            if (
+            mailsListFrom.getText().equals(name)
+            )
+            {
+                mailsListFrom.click();
+                break;
+            }
+        }
+
+//        for(WebElement mailListCheckBox : mailListCheckBox){
+//            mailListCheckBox.getAttribute("onclick").equals("I_Mbox.ctrlMarkRead(this);");
+//        }
     }
     public String getAccountName()
     {

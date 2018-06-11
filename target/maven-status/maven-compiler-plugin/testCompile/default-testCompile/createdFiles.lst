@@ -7,5 +7,6 @@ IUAsteps.class
 PatternsForAT\DriverFactory.class
 pom\CreateMailPage.class
 enums\DriverType.class
+pom\openedLetterPage.class
 Runner.class
 PatternsForAT\DriverSingleton.class
