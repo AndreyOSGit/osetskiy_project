@@ -9,12 +9,15 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import pom.CreateMailPage;
 import pom.MailPage;
 import pom.MainPage;
+import pom.openedLetterPage;
 
 
 public class IUAsteps {
@@ -92,6 +95,9 @@ public class IUAsteps {
     public void iEnterAdressAsSubjectAsMailTextAs(String Adress, String Subject, String Text) throws Throwable {
         CreateMailPage mail = PageFactory.initElements(runDriver, CreateMailPage.class);
         mail.writeImail(Adress,Subject,Text);
+        runDriver.switchTo().frame(runDriver.findElement(By.cssSelector("iframe#wysiwygtext")));
+        runDriver.findElement(By.cssSelector("body.Smile")).sendKeys(Text);
+        runDriver.switchTo().parentFrame();
     }
 
     @And("^I Open mail list$")
@@ -108,9 +114,13 @@ public class IUAsteps {
     }
 
     @Then("^I see mail with subject as (.*) and text as (.*)$")
-    public void iSeeMailWithSubjectAsAndTextAs(String  String ) throws Throwable {
-//        eMailPa mail = PageFactory.initElements(runDriver, MailPage.class);
-
+    public void iSeeMailWithSubjectAsAndTextAs(String  Subject, String Text ) throws Throwable {
+        openedLetterPage mail = PageFactory.initElements(runDriver, openedLetterPage.class);
+        mail.seeMailWithTitleAndText(Subject);
+        runDriver.switchTo().frame(runDriver.findElement(By.cssSelector("div.message_body iframe")));
+        String act = runDriver.findElement(By.cssSelector("body")).getText();
+        runDriver.switchTo().parentFrame();
+        Assert.assertEquals(Text,act);
     }
 
 

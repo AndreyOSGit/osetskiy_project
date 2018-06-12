@@ -17,7 +17,7 @@ public class MailPage extends BasePage
     @FindBy(css = "div.Right i.m")
     protected List<WebElement> mailListReadCheck;
 
-    @FindBy(css = "li.current a")
+    @FindBy(css = "div ul.list_underlined li:nth-of-type(1)  a")
     protected WebElement inboxButton;
 
     public void clickCreateMail() {
@@ -31,8 +31,7 @@ public class MailPage extends BasePage
     @FindBy(css = ".sn_menu_title")
     protected WebElement accountName;
 
-    public void showMeInbox()
-    {
+    public void showMeInbox() throws InterruptedException {
         inboxButton.click();
     }
     public void goToCreateMail()

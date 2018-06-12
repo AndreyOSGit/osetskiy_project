@@ -1,7 +1,6 @@
 package pom;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -16,13 +15,16 @@ public class CreateMailPage extends BasePage
     @FindBy(css = "input[name=\"subject\"]")
     protected WebElement inputSubject;
 
-    @FindBy(css = "body.Smile")
+
+//    @FindBy( css = "body.Smile")
+    @FindBy( css = "iframe#wysiwygtext")
     protected WebElement inputText;
+
 
     @FindBy(css = "input[name=\"send\"]")
     protected WebElement buttonSend;
 
-
+public WebDriver driver;
 
 //    @FindBy(css = "")
 //    protected WebElement buttonUndo;
@@ -30,12 +32,14 @@ public class CreateMailPage extends BasePage
 //    @FindBy(css = "")
 //    protected WebElement buttonSave;
 
-    public void writeImail(String Adres, String Subject, String Text)
-    {
+    public void writeImail(String Adres, String Subject, String Text ) throws InterruptedException {
         inputAdres.sendKeys(Adres);
         inputSubject.sendKeys(Subject+ Keys.ENTER);
 //        inputText.click();
-//        inputText.sendKeys(Text);
+        Thread.sleep(1000);
+
+//        js.executeScript("document.getElementsByClassName('Smile').value='"+Text+"'");
+//        js.executeScript("arguments[0].setAttribute('innerText', ' "+Text+" ')", driver.findElement(By.cssSelector("body.Smile")));
     }
 
     public  void sendEmail() throws InterruptedException {

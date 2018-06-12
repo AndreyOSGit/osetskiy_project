@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: Runner
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 23.515 s <<< FAILURE! - in Runner
-I login to i.ua mail(mailing on i.ua)  Time elapsed: 22.658 s  <<< ERROR!
-java.lang.NullPointerException
-
