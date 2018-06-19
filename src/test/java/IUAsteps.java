@@ -119,8 +119,8 @@ public class IUAsteps {
         mail.seeMailWithTitleAndText(Subject);
         runDriver.switchTo().frame(runDriver.findElement(By.cssSelector("div.message_body iframe")));
         String act = runDriver.findElement(By.cssSelector("body")).getText();
-        runDriver.switchTo().parentFrame();
-        Assert.assertEquals(Text,act);
+         runDriver.switchTo().parentFrame();
+        Assert.assertTrue (act.contains(Text));
     }
 
 

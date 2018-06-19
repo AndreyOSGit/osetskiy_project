@@ -4,9 +4,9 @@
      When Enter e-mail as testmailswat@i.ua and password as 123456qwerty and press login button
      Then Check my login TestMailSWAT@i.ua
      And I open create mail window
-     And I enter adress as testmailswat@i.ua , subject as TestMail, mail text as Test mail Text!
+     And I enter adress as testmailswat@i.ua , subject as TestMail, mail text as Text
      Then Sent created email
      And I Open mail list
      And Open last mail I haven`t read from Tester11
-     Then I see mail with subject as TestMail and text as Test mail Text!
+     Then I see mail with subject as TestMail and text as Text
      
